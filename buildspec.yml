@@ -3,7 +3,9 @@ phases:
   build:
       commands:
           - pip install mkdocs
+          - pip install awscli
           - mkdocs build
+          - aws s3 cp site s3://buck-my-life/ --recursive
 artifacts:
   files:
     - site/**/*
